@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 function OrderSummary() {
     return (
         <>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby=""
+            <div className="modal fade" id="orderSummaryModal" tabIndex="-1" aria-labelledby=""
                  aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">

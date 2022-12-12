@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './OrderSummary';
 import './Navbar';
+import OrderSummary from "./OrderSummary";
 
 
 function Order() {
@@ -11,6 +12,7 @@ function Order() {
 
     return (
         <>
+            <OrderSummary />
             <Navbar />
             <h1>Order</h1>
             <div>
@@ -26,11 +28,9 @@ function Order() {
 
             <div>
                 <button type="button">Cancel Order</button>
-                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderSummaryModal">
                    Checkout
                 </button>
-
-
 
 
 
