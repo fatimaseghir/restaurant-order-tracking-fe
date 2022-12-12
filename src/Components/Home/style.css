@@ -3,10 +3,26 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
-.img1 {
-    filter: blur(2px);
+.logo {
+    width: 3rem;
+    margin: 4rem;
 }
 
-.logo {
-    width: 4rem;
+.img1 {
+    height: 100vh;
+    filter: blur(2px);
+    position: absolute;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3rem;
+}
+
+
