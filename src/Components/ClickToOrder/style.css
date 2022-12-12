@@ -1,0 +1,9 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.farm {
+    background: url('../../images/img2.jpg') no-repeat center center fixed;
+    height: 100vh;
+}
