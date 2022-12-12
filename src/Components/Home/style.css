@@ -1,0 +1,12 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.img1 {
+    filter: blur(2px);
+}
+
+.logo {
+    width: 4rem;
+}
