@@ -1,18 +1,30 @@
 import './style.css';
-import menu from '../../icons/flame.png';
-import events  from '../../icons/flame.png';
-import location from '../../icons/flame.png';
-import farm from '../../icons/flame.png';
+import menu from '../../icons/menu.png';
+import contact  from '../../icons/contact.png';
+import location from '../../icons/location.png';
+import drink from '../../icons/drink2.png';
 
 
 function NavBar() {
 
     return (
-            <div className="nav-bar text-end pb-4 me-5">
-                <a><img className="logo" src="" alt="image" ></img></a>
-                <a><img className="logo" src="" alt="image" ></img></a>
-                <a><img className="logo" src="" alt="image" ></img></a>
-                <a><img className="logo" src="" alt="image" ></img></a>
+            <div className="container-nav">
+                <div className="icon">
+                <a><img className="logo" src={menu} alt="image" ></img></a>
+                <p>MENU</p>
+                </div>
+                <div className="icon">
+                <a><img className="logo" src={contact} alt="image" ></img></a>
+                <p>CONTACT</p>
+                </div>
+                <div className="icon">
+                <a><img className="logo" src={location} alt="image" ></img></a>
+                <p>LOCATION</p>
+                </div>
+                <div className="icon">
+                <a><img className="logo" src={drink} alt="image" ></img></a>
+                <p>EVENTS</p>
+                </div>
             </div>
     );
 }
