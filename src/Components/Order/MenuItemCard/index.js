@@ -1,3 +1,5 @@
+import './style.css';
+
 const MenuItemCard = () => {
 
     const placeholderMenuItem =
@@ -18,9 +20,11 @@ const MenuItemCard = () => {
                 <h4 id='title'>{placeholderMenuItem.menu_item_name}</h4>
                 <p id='product'>{placeholderMenuItem.menu_item_description}</p>
                 <p id='price'>£{placeholderMenuItem.menu_item_price}</p>
-                <img id='minus' src='../../../../public/icons/minus.png' onClick={() => {quantityInput.value -= 1}} />
-                <input id='quantity' type='number' value='0' min='0' />
-                <img id='add' src='../../../../public/icons/plus.png' onClick={() => {quantityInput.value += 1}} />
+                <div id='input'>
+                    <img id='minus' src='../../../../public/icons/minus.png' onClick={() => {quantityInput.value -= 1}} />
+                    <input id='quantity' type='number' value='0' min='0' />
+                    <img id='add' src='../../../../public/icons/plus.png' onClick={() => {quantityInput.value += 1}} />
+                </div>
             </div>
         </div>
     )

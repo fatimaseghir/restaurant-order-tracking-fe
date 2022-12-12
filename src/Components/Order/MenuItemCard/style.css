@@ -1,0 +1,12 @@
+#card {
+    display: flex;
+}
+
+#cardBody {
+    display: flex;
+    flex-direction: column;
+}
+
+#input {
+    display: flex;
+}
