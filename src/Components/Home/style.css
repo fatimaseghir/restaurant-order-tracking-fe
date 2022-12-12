@@ -8,16 +8,18 @@
     margin: 4rem;
 }
 
-.img1 {
+.main {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.home {
+    background: url('../../images/img1.jpg') no-repeat center center fixed;
     height: 100vh;
-    filter: blur(2px);
-    position: absolute;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    position: relative;
     color: white;
     align-items: center;
     justify-content: center;

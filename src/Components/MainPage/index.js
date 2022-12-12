@@ -1,5 +1,6 @@
 import Home from "../Home";
 import NavBar from "../NavBar";
+import Description from "../Description";
 
 
 function MainPage() {
@@ -7,8 +8,7 @@ function MainPage() {
     return (
         <div>
             <Home/>
-            <NavBar />
-
+            <Description />
         </div>
     );
 }
