@@ -1,6 +1,8 @@
 import Home from "../Home";
-import NavBar from "../NavBar";
 import Description from "../Description";
+import Farm from "../Farm";
+import Menu from "../Menu";
+import ClickToOrder from "../ClickToOrder";
 
 
 function MainPage() {
@@ -9,6 +11,9 @@ function MainPage() {
         <div>
             <Home/>
             <Description />
+            <Farm />
+            <Menu />
+            <ClickToOrder />
         </div>
     );
 }

@@ -3,7 +3,7 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
-.description {
+.menu {
     background-color: #D0C9C0;
     color: #362222;
     display: flex;
@@ -11,10 +11,14 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     gap: 2rem;
     padding: 2rem;
     font-style: italic;
 }
 
+.meal {
+    height: 40vw;
+    border-radius:1rem;
+}
 
