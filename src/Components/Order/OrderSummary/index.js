@@ -2,14 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.css';
 
-
-
 function OrderSummary() {
 
     // Please note that form validation and post request will be a task from Story7 onward as desired validation code will
     // connect with POST request.
     // Divs for input errors have already been added here.
-
 
     return (
         <>
