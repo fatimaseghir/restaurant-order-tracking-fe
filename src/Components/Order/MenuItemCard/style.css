@@ -9,16 +9,21 @@ img {
 }
 
 #card {
-    padding: 2rem 1rem;
+    padding: 1rem;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
 #cardBody {
-    width: 50%;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+}
+
+#name {
+    order: -1;
 }
 
 #input {
@@ -26,6 +31,26 @@ img {
     column-gap: 1rem;
 }
 
+#quantity {
+    width: 2rem;
+    height: auto;
+}
+
 .icon {
     width: 2rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    #card {
+        padding: 2rem 1rem;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #cardBody {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }

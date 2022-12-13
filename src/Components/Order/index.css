@@ -28,6 +28,17 @@ code {
     margin: 0 0 0 3rem;
 }
 
+.itemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.menuItemCard {
+    background-color: #FFFFFF;
+    width: 90%;
+    height: auto;
+}
 
 .orderFooter {
     display: flex;
@@ -40,5 +51,11 @@ code {
     color: #362222;
     background: #D0C9C0;
     border: #362222 solid 3px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .menuItemCard {
+        width: 45%;
+    }
 }
 
