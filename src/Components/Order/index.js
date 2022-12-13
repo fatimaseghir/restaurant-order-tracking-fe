@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './OrderSummary';
-import './Navbar';
+// import Navbar from './Navbar';
 import OrderSummary from "./OrderSummary";
 
 
@@ -13,7 +13,7 @@ function Order() {
     return (
         <>
             <OrderSummary />
-            <Navbar />
+            {/*<Navbar />*/}
             <h1>Order</h1>
             <div>
                 <a className="nav-item nav-link" href="">Starters</a>

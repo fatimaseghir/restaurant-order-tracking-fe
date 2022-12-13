@@ -3,13 +3,22 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
+img {
+    width: 40%;
+    height: auto;
+}
+
 #card {
+    padding: 2rem 1rem;
     display: flex;
+    justify-content: space-around;
 }
 
 #cardBody {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 #input {

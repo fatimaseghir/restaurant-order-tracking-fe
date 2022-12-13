@@ -14,9 +14,9 @@ const MenuItemCard = () => {
     const quantityInput = document.querySelector('#quantity');
 
     return (
-        <div className='card'>
-            <div className='cardBody'>
-                <img id='food' src={placeholderMenuItem.menu_item_image} alt={placeholderMenuItem.image_alt} />
+        <div id='card'>
+            <img id='food' src={placeholderMenuItem.menu_item_image} alt={placeholderMenuItem.image_alt} />
+            <div id='cardBody'>
                 <h4 id='title'>{placeholderMenuItem.menu_item_name}</h4>
                 <p id='product'>{placeholderMenuItem.menu_item_description}</p>
                 <p id='price'>£{placeholderMenuItem.menu_item_price}</p>
