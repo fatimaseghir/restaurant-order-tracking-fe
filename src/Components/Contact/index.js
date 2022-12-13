@@ -1,11 +1,11 @@
 import './style.css';
 
-function Description() {
+function Contact() {
 
     return (
-        <div className="description">
+        <div className="contact">
             <div className="text-container">
-                <h1>Restaurant</h1>
+                <h1>Contact</h1>
                 <p>Lorem ipsum dolor sit amet. Qui totam reiciendis et consequatur assumenda est
                 quaerat mollitia. Est rerum voluptas quo aliquam doloremque qui nobis quia eos
                 reiciendis modi in natus perspiciatis est placeat fugit a incidunt Quis. Est
@@ -25,4 +25,4 @@ function Description() {
     );
 }
 
-export default Description;
+export default Contact;
