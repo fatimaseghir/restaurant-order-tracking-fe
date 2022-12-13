@@ -3,16 +3,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import MenuItemCard from "./Components/Order/MenuItemCard";
+import Order from "./Components/Order";
 
 function App() {
   return (
-    <>
-      <main>
-          <Routes>
-              <Route path='/' element={<MenuItemCard />} />
-          </Routes>
-      </main>
-
+    <div>
+        <Order />
     </>
   );
 }
