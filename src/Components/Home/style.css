@@ -1,0 +1,51 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.logo-main {
+    height: 3em;
+    margin: 4rem;
+}
+
+.main {
+    background: #000000CC;
+    height: 100vh;
+}
+
+.home {
+    background: url('../../images/img1.jpg') no-repeat center fixed;
+    height: 100%;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.h-line {
+    width: 80%;
+    height: 1.5px;
+    background: #FFFFFF;
+}
+
+@media (min-width: 750px) {
+
+    .h-line {
+        width: 50%;
+        height: 1px;
+        background: #FFFFFF;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+

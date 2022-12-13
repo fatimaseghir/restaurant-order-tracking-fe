@@ -1,0 +1,36 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.click-to-order {
+    background: url('../../images/img3.jpg') no-repeat center center fixed;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background: none;
+    color: #EDEDED;
+    border: 3px solid #EDEDED;
+    position: relative;
+    height: 5rem;
+    padding: 0 3rem;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+button:hover {
+    color: #FFFFFF8C;
+}
+
+div a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
