@@ -1,10 +1,13 @@
 import './style.css';
+import {Link} from "react-router-dom";
 
 function ClickToOrder() {
 
     return (
         <div className="click-to-order">
-            <button className="order"><a href="order.html">ORDER</a></button>
+            <Link to={`/order`}>
+            <button className="order">ORDER</button>
+            </Link>
         </div>
     );
 }
