@@ -3,7 +3,7 @@ import './style.css';
 function Description() {
 
     return (
-        <div className="description">
+        <div id="description" className="description">
             <div className="text-container">
                 <h1>Restaurant</h1>
                 <p>Lorem ipsum dolor sit amet. Qui totam reiciendis et consequatur assumenda est

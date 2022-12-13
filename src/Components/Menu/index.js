@@ -6,7 +6,7 @@ import img7 from '../../images/img7.jpg'
 function Menu() {
 
     return (
-        <div className="menu">
+        <div id="menu" className="menu">
             <h1>Menu</h1>
             <div className="menu-container">
                 <div className="menu-item">

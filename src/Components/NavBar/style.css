@@ -24,6 +24,10 @@
     justify-content: center;
 }
 
+.menu-text {
+    text-align: center;
+}
+
 @media (min-width: 750px) {
 
     .logo {

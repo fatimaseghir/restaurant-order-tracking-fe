@@ -3,7 +3,7 @@ import './style.css';
 function Contact() {
 
     return (
-        <div className="contact">
+        <div id="contact" className="contact">
             <div className="text-container">
                 <h1>Contact</h1>
                 <p>Lorem ipsum dolor sit amet. Qui totam reiciendis et consequatur assumenda est
