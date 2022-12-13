@@ -4,6 +4,7 @@ import './OrderSummary';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 // import './Navbar';
 import OrderSummary from "./OrderSummary";
+import './index.css';
 
 
 function Order() {
@@ -23,11 +24,11 @@ function Order() {
             </div>
             <div className="orderTitles">
                 <h4 id="starters" className="">Starters</h4>
-                <div className="bigOrangeDiv"></div>
+
                 <h4 id="mains" className="">Mains</h4>
-                <div className="bigOrangeDiv"></div>
+
                 <h4 id="desserts" className="">Desserts</h4>
-                <div className="bigOrangeDiv"></div>
+
             </div>
 
             <div className="orderFooter">
@@ -35,8 +36,6 @@ function Order() {
                 <button type="button" className="orderButton" data-bs-toggle="modal" data-bs-target="#orderSummaryModal">
                 COMPLETE ORDER
                 </button>
-
-
 
             </div>
             </main>

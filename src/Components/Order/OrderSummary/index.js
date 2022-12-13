@@ -1,8 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './index.css';
+
 
 
 function OrderSummary() {
+
+    // Please note that form validation and post request will be a task from Story7 onward as desired validation code will
+    // connect with POST request.
+    // Divs for input errors have already been added here.
+
+
     return (
         <>
             <div className="modal fade" id="orderSummaryModal" tabIndex="-1" aria-labelledby=""
@@ -15,29 +23,45 @@ function OrderSummary() {
                                     aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form>
-                                <label htmlFor="fname">First name</label>
-                                <input className="form-control" type="text" id="fname" name="fname" />
-                                <label htmlFor="lname">Last name</label>
-                                <input className="form-control" type="text" id="lname" name="lname" />
+                            <form name="orderSummaryForm">
+
+                                <label htmlFor="first-name">First name</label>
+                                <input id="first-name" name="first-name" className="submit-contact form-control"
+                                       type="text" />
+                                <div id="firstNameError" className="alert hidden formItem_alert"></div>
+
+                                <label htmlFor="last-name">Last name</label>
+                                <input id="last-name" name="first-name" className="submit-contact form-control"
+                                       type="text" />
+                                <div id="firstNameError" className="alert hidden formItem_alert"></div>
+
                                 <label htmlFor="email">Email</label>
-                                <input className="form-control" type="text" id="lname" name="lname" />
+                                <input id="email" name="email" className="submit-contact form-control"
+                                       type="text" />
+                                <div id="emailError" className="alert hidden formItem_alert"></div>
+
                                 <label htmlFor="address">Address</label>
-                                <input className="form-control" type="text" id="lname" name="lname" />
-                                <label htmlFor="address">Postcode</label>
-                                <input className="form-control" type="text" id="lname" name="lname" />
+                                <input id="address" name="address" className="submit-contact form-control"
+                                       type="text" />
+                                <div id="addressError" className="alert hidden formItem_alert"></div>
+
+                                <label htmlFor="postcode">Postcode</label>
+                                <input id="postcode" name="postcode" className="submit-contact form-control"
+                                       type="text" />
+                                <div id="postcodeError" className="alert hidden formItem_alert"></div>
+
+
+                                <div id="orderSummaryFooter" className="modal-footer justify-content-between">
+                                    <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Cancel Order</button>
+                                    <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Modify</button>
+                                    <button type="submit" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Complete</button>
+                                </div>
+
                             </form>
-                        </div>
-                        <div id="orderSummaryFooter" className="modal-footer justify-content-between">
-                            <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Cancel Order</button>
-                            <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Modify</button>
-                            <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Complete</button>
-                        </div>
                     </div>
                 </div>
             </div>
-
-
+            </div>
         </>
     );
 }
