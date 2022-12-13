@@ -27,11 +27,10 @@ button {
 }
 
 button:hover {
-    background: rgba(255, 255, 255, 0.55);
-    color: white;
+    color: #FFFFFF8C;
 }
 
 div a {
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
 }

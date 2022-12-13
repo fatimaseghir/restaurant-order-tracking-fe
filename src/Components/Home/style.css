@@ -9,7 +9,7 @@
 }
 
 .main {
-    background: rgba(0, 0, 0, 0.8);
+    background: #000000CC;
     height: 100vh;
 }
 
@@ -22,7 +22,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #FFFFFF;
     align-items: center;
     justify-content: center;
     gap: 3rem;
