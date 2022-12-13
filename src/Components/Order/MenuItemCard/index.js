@@ -1,4 +1,6 @@
 import './style.css';
+import Minus from '../../../icons/minus.png';
+import Plus from '../../../icons/plus.png';
 
 const MenuItemCard = () => {
 
@@ -21,9 +23,9 @@ const MenuItemCard = () => {
                 <p id='product'>{placeholderMenuItem.menu_item_description}</p>
                 <p id='price'>£{placeholderMenuItem.menu_item_price}</p>
                 <div id='input'>
-                    <img id='minus' src='../../../../public/icons/minus.png' onClick={() => {quantityInput.value -= 1}} />
-                    <input id='quantity' type='number' value='0' min='0' />
-                    <img id='add' src='../../../../public/icons/plus.png' onClick={() => {quantityInput.value += 1}} />
+                    <img className='icon' id='minus' src={Minus} onClick={() => {quantityInput.value -= 1}} />
+                    <input id='quantity' type='number' defaultValue='0' min='0' />
+                    <img className='icon' id='plus' src={Plus} onClick={() => {quantityInput.value += 1}} />
                 </div>
             </div>
         </div>
