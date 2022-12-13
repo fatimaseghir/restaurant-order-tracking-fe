@@ -4,6 +4,7 @@ import menu from '../../icons/menu.png';
 import contact  from '../../icons/contact.png';
 import phone from '../../icons/phone.png';
 import drink from '../../icons/drink2.png';
+import {Link} from "react-router-dom";
 
 function NavBar() {
 
@@ -18,8 +19,8 @@ function NavBar() {
                     <p className="menu-text">MENU</p></AnchorLink>
                 </div>
                 <div className="icon">
-                    <AnchorLink href='#farm'><img className="logo" src={contact} alt="image" ></img>
-                     <p className="menu-text">FARM</p></AnchorLink>
+                    <Link to={`/order`}><img className="logo" src={contact} alt="image" ></img>
+                     <p className="menu-text">ORDER</p></Link>
                 </div>
                 <div className="icon">
                     <AnchorLink href='#contact'><img className="logo" src={phone} alt="image" ></img>

@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './OrderSummary';
 import AnchorLink from "react-anchor-link-smooth-scroll";
-// import './Navbar';
 import OrderSummary from "./OrderSummary";
 import './index.css';
 import {Link} from "react-router-dom";
@@ -15,8 +14,7 @@ function Order() {
         <>
             <main className="orderMain">
             <OrderSummary />
-            {/*<Navbar />*/}
-            <h1 className="text-center">Order</h1>
+            <h1 className="order-title">Order</h1>
             <div className="orderNav">
                 <h3><AnchorLink className="nav-item nav-link" href="#starters">Starters</AnchorLink></h3>
                 <h3><AnchorLink className="nav-item nav-link" href="#mains">Mains</AnchorLink></h3>
@@ -34,7 +32,6 @@ function Order() {
                 </button>
             </div>
             </main>
-
         </>
     );
 }

@@ -6,7 +6,7 @@ function ClickToOrder() {
     return (
         <div className="click-to-order">
             <Link to={`/order`}>
-            <button className="order"><a href="">ORDER</a></button>
+            <button className="order">ORDER</button>
             </Link>
         </div>
     );
