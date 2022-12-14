@@ -20,7 +20,6 @@ function OrderSummary() {
                                     aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-7 fw-bold">Item</div>
@@ -48,35 +47,27 @@ function OrderSummary() {
                                     <div className="col-1">£108.76</div>
                                 </div>
                             </div>
-
                             <form name="orderSummaryForm ">
-
                                 <label htmlFor="first-name">First name</label>
                                 <input id="first-name" name="first-name" className="submit-contact form-control w-50"
                                        type="text" />
-
                                 <label htmlFor="last-name">Last name</label>
                                 <input id="last-name" name="first-name" className="submit-contact form-control w-50"
                                        type="text" />
-
                                 <label htmlFor="email">Email</label>
                                 <input id="email" name="email" className="submit-contact form-control w-75"
                                        type="text" />
-
                                 <label htmlFor="address">Address</label>
                                 <textarea id="address" name="address" className="submit-contact form-control w-75 h-25"
                                        type="text" rows="2" />
-
                                 <label htmlFor="postcode">Postcode</label>
                                 <input id="postcode" name="postcode" className="submit-contact form-control w-25 mb-4"
                                        type="text" />
-
                                 <div id="orderSummaryFooter" className="modal-footer justify-content-between">
                                     <button type="button" className="border border-3 border-light" data-bs-dismiss="modal">CANCEL</button>
                                     <button type="button" className="border border-3 border-light" data-bs-dismiss="modal">MODIFY</button>
                                     <button type="submit" className="border border-3 border-light" data-bs-dismiss="modal">COMPLETE</button>
                                 </div>
-
                             </form>
                     </div>
                 </div>
