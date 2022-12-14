@@ -16,3 +16,25 @@ code {
     color: #FFFFFF;
     background: #362222;
 }
+
+#orderSummaryFooter button {
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    margin: 0;
+    height: auto;
+}
+
+@media screen and (min-width: 700px) {
+    #orderSummaryFooter button {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .container-fluid {
+        width: 60%;
+    }
+}
+
+
