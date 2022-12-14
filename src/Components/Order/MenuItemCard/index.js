@@ -1,7 +1,7 @@
 import './style.css';
 import Minus from '../../../icons/minus.png';
 import Plus from '../../../icons/plus.png';
-import {useState, useRef, useEffect} from "react";
+import {useState, useRef} from 'react';
 
 const MenuItemCard = (props) => {
 
@@ -10,29 +10,27 @@ const MenuItemCard = (props) => {
 
     const [itemState, setItemState] = useState(0);
 
-    const increaseItemTotal = () => {
-        setItemState(prevState => prevState += 1)
-        ref.current.value = itemState;
+    const inc = () => {
+        setItemState(itemState + 1);
     }
 
-    const decreaseItemTotal = () => {
-        if (ref.current.value > 0) {
-            setItemState(prevState => prevState -= 1)
-            ref.current.value = itemState;
+    const dec = () => {
+        if (itemState > 0) {
+            setItemState(itemState - 1);
         }
     }
 
     return (
         <div id='card'>
-            <img id='food' src={menuItem.menu_item_image} alt={menuItem.image_alt} />
+            <img id='food' src={menuItem.imageURL} alt={menuItem.imageALT} />
             <div id='cardBody'>
-                <h4 id='name'>{menuItem.menu_item_name}</h4>
-                <p id='description'>{menuItem.menu_item_description}</p>
-                <p id='price'>£{menuItem.menu_item_price}</p>
+                <h4 id='name'>{menuItem.name}</h4>
+                <p id='description'>{menuItem.description}</p>
+                <p id='price'>£{menuItem.price}</p>
                 <div id='input'>
-                    <img className='icon' id='minus' src={Minus} onClick={decreaseItemTotal} />
-                    <input ref={ref} type='number' defaultValue='0' min='0' />
-                    <img className='icon' id='plus' src={Plus} onClick={increaseItemTotal} />
+                    <img className='icon' id='minus' src={Minus} onClick={dec} />
+                    {itemState}
+                    <img className='icon' id='plus' src={Plus} onClick={inc} />
                 </div>
             </div>
         </div>

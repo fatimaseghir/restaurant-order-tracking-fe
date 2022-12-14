@@ -5,42 +5,36 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import OrderSummary from "./OrderSummary";
 import './index.css';
 import MenuItemCard from "./MenuItemCard";
+import {useEffect, useState} from "react";
 
 function Order() {
 
-    const placeholderMenu = [
-        {
-            id: 1,
-            menu_item_image: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
-            image_alt: 'Classic Burger',
-            menu_item_name: 'Classic Burger',
-            menu_item_description: 'A delicious beef burger with all the fixings, including lettuce, tomato, onion, pickles, ketchup, and mustard.',
-            menu_item_price: 6.99,
-        },
-        {
-            id: 2,
-            menu_item_image: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
-            image_alt: 'Classic Burger',
-            menu_item_name: 'Cheese Burger',
-            menu_item_description: 'A delicious beef burger with all the fixings, including lettuce, tomato, onion, pickles, ketchup, and mustard.',
-            menu_item_price: 6.99,
-        },
-        {
-            id: 3,
-            menu_item_image: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
-            image_alt: 'Classic Burger',
-            menu_item_name: 'Burger',
-            menu_item_description: 'A delicious beef burger with all the fixings, including lettuce, tomato, onion, pickles, ketchup, and mustard.',
-            menu_item_price: 6.99,
+    const extractResponseData = (response) => {
+        return response.json();
+    };
+
+    const [menu, setMenu] = useState([]);
+
+    const fetchMenu = async () => {
+        const response = await fetch('http://localhost:8080/menu');
+        if (!response.ok) {
+            throw new Error('Menu can not be fetched');
         }
-        ];
+        const menuData = await extractResponseData(response);
+        setMenu(menuData.data);
+    }
+
+    useEffect(() => {
+        fetchMenu()
+            .catch(err => err.message = 'Error here!')
+    }, [])
 
     return (
         <>
             <main className="orderMain">
             <OrderSummary />
             {/*<Navbar />*/}
-            <h1 className="text-center">Order</h1>
+            <h1 className="order-title">Order</h1>
             <div className="orderNav">
 
                 <h3><AnchorLink className="nav-item nav-link" href="#starters">Starters</AnchorLink></h3>
@@ -48,14 +42,20 @@ function Order() {
                 <h3><AnchorLink className="nav-item nav-link" href="#desserts">Desserts</AnchorLink></h3>
             </div>
             <div className="orderTitles">
-                <h4 id="starters" className="">Starters</h4>
+                <h4 id="starters" className="subheading">Starters</h4>
                 <div className='itemContainer'>
-
+                    {menu.slice(0, 6).map((menuItem, index) => {
+                        return (
+                            <div className='menuItemCard' key={index}>
+                                <MenuItemCard menuItem={menuItem} />
+                            </div>
+                        );
+                    })}
                 </div>
 
-                <h4 id="mains" className="">Mains</h4>
+                <h4 id="mains" className="subheading">Mains</h4>
                 <div className='itemContainer'>
-                {placeholderMenu.map((menuItem, index) => {
+                {menu.slice(6,12).map((menuItem, index) => {
                     return (
                         <div className='menuItemCard' key={index}>
                             <MenuItemCard menuItem={menuItem} />
@@ -64,9 +64,15 @@ function Order() {
                 })}
                 </div>
 
-                <h4 id="desserts" className="">Desserts</h4>
+                <h4 id="desserts" className="subheading">Desserts</h4>
                 <div className='itemContainer'>
-
+                    {menu.slice(12).map((menuItem, index) => {
+                        return (
+                            <div className='menuItemCard' key={index}>
+                                <MenuItemCard menuItem={menuItem} />
+                            </div>
+                        );
+                    })}
                 </div>
 
             </div>
