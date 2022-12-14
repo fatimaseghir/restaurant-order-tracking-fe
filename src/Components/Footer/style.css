@@ -1,0 +1,17 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.footer-main {
+    background-color: #362222;
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-top: 0.5rem;
+}
+
+.back-to-top {
+    height: 1.5rem;
+}

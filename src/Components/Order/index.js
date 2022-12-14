@@ -6,6 +6,7 @@ import OrderSummary from "./OrderSummary";
 import './index.css';
 import MenuItemCard from "./MenuItemCard";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 function Order() {
 
@@ -36,7 +37,6 @@ function Order() {
             {/*<Navbar />*/}
             <h1 className="order-title">Order</h1>
             <div className="orderNav">
-
                 <h3><AnchorLink className="nav-item nav-link" href="#starters">Starters</AnchorLink></h3>
                 <h3><AnchorLink className="nav-item nav-link" href="#mains">Mains</AnchorLink></h3>
                 <h3><AnchorLink className="nav-item nav-link" href="#desserts">Desserts</AnchorLink></h3>
@@ -76,16 +76,13 @@ function Order() {
                 </div>
 
             </div>
-
             <div className="orderFooter">
-                <button type="button" className="orderButton">CANCEL ORDER</button>
+                <Link to={`/`}><button type="button" className="orderButton">CANCEL ORDER</button></Link>
                 <button type="button" className="orderButton" data-bs-toggle="modal" data-bs-target="#orderSummaryModal">
                 COMPLETE ORDER
                 </button>
-
             </div>
             </main>
-
         </>
     );
 }

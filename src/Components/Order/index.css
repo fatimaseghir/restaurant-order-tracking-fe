@@ -1,6 +1,18 @@
+<<<<<<< HEAD
+=======
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.order-title {
+    font-style: italic;
+    text-align: center;
+}
+>>>>>>> 1b713923436a7df586e7c6387c8bf3d3d093c4b3
 
 .orderMain {
-    height: 100%;
+    height: auto;
     color: #362222;
     background: #D0C9C0;
 }

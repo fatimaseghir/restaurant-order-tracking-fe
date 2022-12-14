@@ -1,0 +1,43 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.logo {
+    width: 2.4rem;
+    margin: 3.5rem;
+}
+
+.container-nav {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-text {
+    text-align: center;
+}
+
+@media (min-width: 750px) {
+
+    .logo {
+        width: 1.5rem;
+        margin: 2rem;
+    }
+
+    p {
+        font-size: small;
+    }
+}
+
+

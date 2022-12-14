@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.css';
+import {Link} from "react-router-dom";
 
 
 
@@ -52,8 +53,8 @@ function OrderSummary() {
 
 
                                 <div id="orderSummaryFooter" className="modal-footer justify-content-between">
-                                    <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Cancel Order</button>
-                                    <button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Modify</button>
+                                    <Link to={`/`}><button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Cancel Order</button></Link>
+                                    <Link to={`/order`}><button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Modify</button></Link>
                                     <button type="submit" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Complete</button>
                                 </div>
 
