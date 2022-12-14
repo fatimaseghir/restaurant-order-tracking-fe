@@ -19,7 +19,6 @@ function Menu() {
         }
         const menuData = await extractResponseData(response);
         setMenu(menuData.data);
-        console.log(menu.data);
     };
 
     useEffect( () => {
