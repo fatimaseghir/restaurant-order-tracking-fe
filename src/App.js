@@ -1,14 +1,19 @@
+import {Route, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import Order from "./Components/Order";
+import MainPage from "./Components/MainPage";
 
 function App() {
   return (
-      <Routes>
-          <Route path='/' element={<Order />} />
-      </Routes>
+    <div>
+        <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/order" element={<Order/>} />
+        </Routes>
+    </div>
   );
 }
 
