@@ -6,9 +6,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import OrderSummary from "./OrderSummary";
 import './index.css';
 
-
 function Order() {
-
 
     return (
         <>
