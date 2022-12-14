@@ -1,24 +1,25 @@
 import './style.css';
 import Minus from '../../../icons/minus.png';
 import Plus from '../../../icons/plus.png';
-import {useState} from "react";
+import {useState, useRef, useEffect} from "react";
 
 const MenuItemCard = (props) => {
 
     const {menuItem} = props;
-
-    const quantityInput = document.querySelector('#quantity');
+    const ref = useRef(null);
 
     const [itemState, setItemState] = useState(0);
 
     const increaseItemTotal = () => {
         setItemState(prevState => prevState += 1)
-        quantityInput.value = itemState;
+        ref.current.value = itemState;
     }
 
     const decreaseItemTotal = () => {
-        setItemState(prevState => prevState -= 1)
-        quantityInput.value = itemState;
+        if (ref.current.value > 0) {
+            setItemState(prevState => prevState -= 1)
+            ref.current.value = itemState;
+        }
     }
 
     return (
@@ -30,7 +31,7 @@ const MenuItemCard = (props) => {
                 <p id='price'>£{menuItem.menu_item_price}</p>
                 <div id='input'>
                     <img className='icon' id='minus' src={Minus} onClick={decreaseItemTotal} />
-                    <input id='quantity' type='number' defaultValue='0' min='0' />
+                    <input ref={ref} type='number' defaultValue='0' min='0' />
                     <img className='icon' id='plus' src={Plus} onClick={increaseItemTotal} />
                 </div>
             </div>

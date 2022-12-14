@@ -10,6 +10,7 @@ function Order() {
 
     const placeholderMenu = [
         {
+            id: 1,
             menu_item_image: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
             image_alt: 'Classic Burger',
             menu_item_name: 'Classic Burger',
@@ -17,16 +18,18 @@ function Order() {
             menu_item_price: 6.99,
         },
         {
+            id: 2,
             menu_item_image: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
             image_alt: 'Classic Burger',
-            menu_item_name: 'Classic Burger',
+            menu_item_name: 'Cheese Burger',
             menu_item_description: 'A delicious beef burger with all the fixings, including lettuce, tomato, onion, pickles, ketchup, and mustard.',
             menu_item_price: 6.99,
         },
         {
+            id: 3,
             menu_item_image: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
             image_alt: 'Classic Burger',
-            menu_item_name: 'Classic Burger',
+            menu_item_name: 'Burger',
             menu_item_description: 'A delicious beef burger with all the fixings, including lettuce, tomato, onion, pickles, ketchup, and mustard.',
             menu_item_price: 6.99,
         }
