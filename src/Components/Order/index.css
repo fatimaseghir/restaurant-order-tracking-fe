@@ -3,27 +3,33 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
+a.icon-home {
+    color: #362222;
+    padding: 4rem;
+    font-weight: bold;
+}
+
 .order-title {
     font-style: italic;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 .orderMain {
     height: auto;
-    color: #362222;
     background: #D0C9C0;
+    padding-top: 4rem;
 }
 
 .orderNav {
     display: flex;
     gap: 2rem;
-    margin: 0 0 0 2rem;
+    justify-content: center;
 }
 
 .orderTitles {
     margin: 0 0 0 3rem;
 }
-
 
 .orderFooter {
     display: flex;

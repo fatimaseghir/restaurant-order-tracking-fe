@@ -61,7 +61,7 @@ function Menu() {
                         return (
                             <p key={menuItem.id}>{menuItem.name} £{menuItem.price}</p>
                         )})}
-                    <img className="meal" src={img6} />
+                <img className="meal" src={img6}/>
                 </div>
                 <div className="menu-item">
                 <h3>Mains</h3>
@@ -69,7 +69,7 @@ function Menu() {
                         return (
                             <p key={menuItem.id}>{menuItem.name} £{menuItem.price}</p>
                         )})}
-                    <img className="meal" src={img5} />
+                <img className="meal" src={img5}/>
                 </div>
                 <div className="menu-item">
                 <h3>Desserts</h3>
@@ -77,7 +77,7 @@ function Menu() {
                         return (
                             <p key={menuItem.id}>{menuItem.name} £{menuItem.price}</p>
                         )})}
-                    <img className="meal" src={img7} />
+                <img className="meal" src={img7}/>
                 </div>
             </div>
         </div>
