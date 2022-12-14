@@ -17,7 +17,8 @@ code {
     background: #362222;
 }
 
-#orderSummaryFooter button {
+#orderSummaryFooter button,
+#orderSummaryFooter input {
     color: #FFFFFF;
     font-size: 0.75rem;
     padding: 0.5rem;
