@@ -2,29 +2,12 @@ import './style.css';
 import img5 from '../../images/img5.jpg'
 import img6 from '../../images/img6.jpg'
 import img7 from '../../images/img7.jpg'
-import {useEffect, useState} from "react";
+import MenuContext from '../../Contexts/MenuContext';
+import React from "react";
 
 function Menu() {
 
-    const extractResponseData = (response) => {
-        return response.json();
-    };
-
-    const [menu, setMenu] = useState([]);
-
-    const fetchMenu = async () => {
-        const response = await fetch(`http://localhost:8080/menu`);
-        if (!response.ok) {
-            throw new Error("Menu can't be fetched");
-        }
-        const menuData = await extractResponseData(response);
-        setMenu(menuData.data);
-    };
-
-    useEffect( () => {
-        fetchMenu()
-            .catch(err => err.message = 'Error here!')
-    }, []);
+    const menu = React.useContext(MenuContext);
 
     return (
         <div id="menu" className="menu">

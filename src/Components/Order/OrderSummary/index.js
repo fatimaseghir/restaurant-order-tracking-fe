@@ -1,67 +1,106 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './index.css';
+import '../../OrderConfirmed/index.css';
 import {Link} from "react-router-dom";
-
-
+import {useNavigate} from 'react-router-dom';
+import {useForm} from 'react-hook-form';
 
 function OrderSummary() {
 
-    // Please note that form validation and post request will be a task from Story7 onward as desired validation code will
-    // connect with POST request.
-    // Divs for input errors have already been added here.
+    const extractResponseData = (response) => {
+        return response.json();
+    };
 
+    let customSettings = {
+        method: 'POST',
+        body: JSON.stringify(''),
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }
+
+    const postOrder= async (data) => {
+        customSettings.body = JSON.stringify(data);
+        const response = await fetch(`http://localhost:8080/orders`, customSettings);
+        if (!response.ok) {
+            throw new Error("Post can't be done");
+        }
+        const orderNumber = await extractResponseData(response);
+        console.log(orderNumber);
+    };
+
+    const navigate = useNavigate();
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+    } = useForm();
+
+    const onSubmit = (data) => {
+        postOrder(data);
+        console.log(data);
+        navigate('/order');
+    }
+
+    const onCancel = () => {
+        reset();
+        navigate('/');
+    }
 
     return (
         <>
-            <div className="modal fade" id="orderSummaryModal" tabIndex="-1" aria-labelledby=""
-                 aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Order Summary</h1>
-                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <form name="orderSummaryForm">
-
-                                <label htmlFor="first-name">First name</label>
-                                <input id="first-name" name="first-name" className="submit-contact form-control"
-                                       type="text" />
-                                <div id="firstNameError" className="alert hidden formItem_alert"></div>
-
-                                <label htmlFor="last-name">Last name</label>
-                                <input id="last-name" name="first-name" className="submit-contact form-control"
-                                       type="text" />
-                                <div id="firstNameError" className="alert hidden formItem_alert"></div>
-
-                                <label htmlFor="email">Email</label>
-                                <input id="email" name="email" className="submit-contact form-control"
-                                       type="text" />
-                                <div id="emailError" className="alert hidden formItem_alert"></div>
-
-                                <label htmlFor="address">Address</label>
-                                <input id="address" name="address" className="submit-contact form-control"
-                                       type="text" />
-                                <div id="addressError" className="alert hidden formItem_alert"></div>
-
-                                <label htmlFor="postcode">Postcode</label>
-                                <input id="postcode" name="postcode" className="submit-contact form-control"
-                                       type="text" />
-                                <div id="postcodeError" className="alert hidden formItem_alert"></div>
-
-
-                                <div id="orderSummaryFooter" className="modal-footer justify-content-between">
-                                    <Link to={`/`}><button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Cancel Order</button></Link>
-                                    <Link to={`/order`}><button type="button" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Modify</button></Link>
-                                    <button type="submit" className="fw-bold bg-dark text-light border border-3 border-light" data-bs-dismiss="modal">Complete</button>
-                                </div>
-
-                            </form>
+            <div className="form-container">
+                <h3>New Order</h3>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="input-container">
+                        <label>Name</label>
+                        <input
+                            className="label-name"
+                            type="text"
+                            placeholder="Enter you name"
+                            {...register("name", {
+                                required: "Please enter your name"
+                            })}
+                        />
+                        {errors.name && <p className="errorMsg">{errors.name.message}</p>}
                     </div>
-                </div>
-            </div>
+                    <div className="input-container">
+                        <label>Email</label>
+                        <input
+                            className="label-name"
+                            type="text"
+                            placeholder="Enter you email"
+                            {...register("email", {
+                                required: "Please enter your email",
+                                pattern: {
+                                    value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                                    message: "Please enter a valid email"
+                                }
+                            })}
+                        />
+                        {errors.email && <p className="errorMsg">{errors.email.message}</p>}
+                    </div>
+                    <div className="input-container">
+                        <label>Address</label>
+                        <input
+                            className="label-name"
+                            type="text"
+                            placeholder="Enter you address"
+                            {...register("address", {
+                                required: "Please enter your address"
+                            })}
+                        />
+                        {errors.address && <p className="errorMsg">{errors.address.message}</p>}
+                    </div>
+                    <div className="buttons-container">
+                    <button className="button-styling" onClick={onCancel}>
+                        Cancel
+                    </button>
+                    <button className="button-styling" type="Submit">
+                        Continue
+                    </button>
+                    </div>
+                </form>
             </div>
         </>
     );

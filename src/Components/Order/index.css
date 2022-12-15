@@ -17,12 +17,15 @@
 .order-title {
     text-align: center;
     font-style: italic;
+    padding: 2.5rem;
 }
 
 .orderNav {
     display: flex;
+    justify-content: center;
     gap: 2rem;
     margin: 0 0 0 2rem;
+    font-style: italic;
 }
 
 .orderTitles {
@@ -55,12 +58,11 @@
 }
 
 .subheading {
-    font-size: 2rem;
     font-weight: bold;
     padding: 3rem 0 1rem;
 }
 
-@media only screen and (min-width: 1000px) {
+@media (min-width: 750px) {
     .menuItemCard {
         width: 45%;
     }

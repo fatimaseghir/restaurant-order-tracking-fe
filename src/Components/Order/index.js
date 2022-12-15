@@ -2,47 +2,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import Navbar from './Navbar';
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "../OrderConfirmed";
 import './index.css';
 import MenuItemCard from "./MenuItemCard";
-import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import MenuContext from "../../Contexts/MenuContext";
+import {useForm} from "react-hook-form";
 
 function Order() {
 
-    const extractResponseData = (response) => {
-        return response.json();
-    };
+    const menu = React.useContext(MenuContext);
 
-    const [menu, setMenu] = useState([]);
+    const navigate = useNavigate();
 
-    const fetchMenu = async () => {
-        const response = await fetch('http://localhost:8080/menu');
-        if (!response.ok) {
-            throw new Error('Menu can not be fetched');
-        }
-        const menuData = await extractResponseData(response);
-        setMenu(menuData.data);
+    const {
+        reset,
+        formState: { errors }
+    } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+        navigate('/orderconfirmed');
     }
 
-    useEffect(() => {
-        fetchMenu()
-            .catch(err => err.message = 'Error here!')
-    }, [])
+    const onCancel = () => {
+        reset();
+        navigate('/');
+    }
 
     return (
         <>
             <main className="orderMain">
-            <OrderSummary />
-            {/*<Navbar />*/}
-            <h1 className="order-title">Order</h1>
+            <h3 className="order-title">Add Items to Order</h3>
             <div className="orderNav">
-                <h3><AnchorLink className="nav-item nav-link" href="#starters">Starters</AnchorLink></h3>
-                <h3><AnchorLink className="nav-item nav-link" href="#mains">Mains</AnchorLink></h3>
-                <h3><AnchorLink className="nav-item nav-link" href="#desserts">Desserts</AnchorLink></h3>
+                <h5><AnchorLink className="nav-item nav-link" href="#starters">Starters</AnchorLink></h5>
+                <h5><AnchorLink className="nav-item nav-link" href="#mains">Mains</AnchorLink></h5>
+                <h5><AnchorLink className="nav-item nav-link" href="#desserts">Desserts</AnchorLink></h5>
             </div>
             <div className="orderTitles">
-                <h4 id="starters" className="subheading">Starters</h4>
+                <h5 id="starters" className="subheading">Starters</h5>
                 <div className='itemContainer'>
                     {menu.slice(0, 6).map((menuItem, index) => {
                         return (
@@ -53,7 +52,7 @@ function Order() {
                     })}
                 </div>
 
-                <h4 id="mains" className="subheading">Mains</h4>
+                <h5 id="mains" className="subheading">Mains</h5>
                 <div className='itemContainer'>
                 {menu.slice(6,12).map((menuItem, index) => {
                     return (
@@ -64,7 +63,7 @@ function Order() {
                 })}
                 </div>
 
-                <h4 id="desserts" className="subheading">Desserts</h4>
+                <h5 id="desserts" className="subheading">Desserts</h5>
                 <div className='itemContainer'>
                     {menu.slice(12).map((menuItem, index) => {
                         return (
@@ -77,9 +76,11 @@ function Order() {
 
             </div>
             <div className="orderFooter">
-                <Link to={`/`}><button type="button" className="orderButton">CANCEL ORDER</button></Link>
-                <button type="button" className="orderButton" data-bs-toggle="modal" data-bs-target="#orderSummaryModal">
-                COMPLETE ORDER
+                <button onClick={onCancel}>
+                    Cancel
+                </button>
+                <button onClick={onSubmit} type="Submit">
+                    Submit
                 </button>
             </div>
             </main>

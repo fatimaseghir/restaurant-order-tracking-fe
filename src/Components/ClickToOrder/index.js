@@ -5,7 +5,7 @@ function ClickToOrder() {
 
     return (
         <div className="click-to-order">
-            <Link to={`/order`}>
+            <Link to={`/createorder`}>
             <button className="order">ORDER</button>
             </Link>
         </div>
