@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-// import Navbar from './Navbar';
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import OrderSummary from "../OrderConfirmed";
 import './index.css';
 import MenuItemCard from "./MenuItemCard";
 import React, {useEffect, useState} from "react";
@@ -10,16 +8,28 @@ import {Link, useNavigate} from "react-router-dom";
 import MenuContext from "../../Contexts/MenuContext";
 import {useForm} from "react-hook-form";
 
+const ordersTemp = [
+    {item: 0, quantity: 0}
+];
+
 function Order() {
 
     const menu = React.useContext(MenuContext);
 
     const navigate = useNavigate();
 
+    const [orders, setOrders] = useState([]);
+
     const {
         reset,
         formState: { errors }
     } = useForm();
+
+    const addItemHandler = (id, quantity, price) => {
+        setOrders(
+            [...orders, {item: id, quantity: quantity, price: price}]
+        )
+    }
 
     const onSubmit = (data) => {
         console.log(data);
@@ -30,6 +40,17 @@ function Order() {
         reset();
         navigate('/');
     }
+
+    const getTotal = () => {
+        let total = 0;
+        orders.map(order => {
+            total += order.price*order.quantity;
+           console.log(total);
+            }
+        )
+        return total;
+    }
+
 
     return (
         <>
@@ -46,7 +67,7 @@ function Order() {
                     {menu.slice(0, 6).map((menuItem, index) => {
                         return (
                             <div className='menuItemCard' key={index}>
-                                <MenuItemCard menuItem={menuItem} />
+                                <MenuItemCard menuItem={menuItem} addItemHandler={addItemHandler}/>
                             </div>
                         );
                     })}
@@ -57,7 +78,7 @@ function Order() {
                 {menu.slice(6,12).map((menuItem, index) => {
                     return (
                         <div className='menuItemCard' key={index}>
-                            <MenuItemCard menuItem={menuItem} />
+                            <MenuItemCard menuItem={menuItem} addItemHandler={addItemHandler} />
                         </div>
                     );
                 })}
@@ -68,13 +89,44 @@ function Order() {
                     {menu.slice(12).map((menuItem, index) => {
                         return (
                             <div className='menuItemCard' key={index}>
-                                <MenuItemCard menuItem={menuItem} />
+                                <MenuItemCard menuItem={menuItem} addItemHandler={addItemHandler}/>
                             </div>
                         );
                     })}
                 </div>
 
             </div>
+                <div>
+                    <h3 className="order-title" > Order Summary</h3>
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {orders.map(order => {
+                            return (
+                            <>
+                            <tr key={order.item}>
+                                        <td>{order.item}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>£{order.price*order.quantity}</td>
+                            </tr>
+                            </>
+                            )
+                        })}
+                        <tr key='total'>
+                        <td>Total</td>
+                        <td></td>
+                        <td>£{getTotal().toFixed(2)}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             <div className="orderFooter">
                 <button onClick={onCancel}>
                     Cancel

@@ -1,5 +1,4 @@
 import '../../OrderConfirmed/index.css';
-import {Link} from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 
@@ -58,11 +57,11 @@ function OrderSummary() {
                             className="label-name"
                             type="text"
                             placeholder="Enter you name"
-                            {...register("name", {
+                            {...register("customerName", {
                                 required: "Please enter your name"
                             })}
                         />
-                        {errors.name && <p className="errorMsg">{errors.name.message}</p>}
+                        {errors.customerName && <p className="errorMsg">{errors.customerName.message}</p>}
                     </div>
                     <div className="input-container">
                         <label>Email</label>
@@ -70,7 +69,7 @@ function OrderSummary() {
                             className="label-name"
                             type="text"
                             placeholder="Enter you email"
-                            {...register("email", {
+                            {...register("customerEmail", {
                                 required: "Please enter your email",
                                 pattern: {
                                     value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
@@ -78,7 +77,7 @@ function OrderSummary() {
                                 }
                             })}
                         />
-                        {errors.email && <p className="errorMsg">{errors.email.message}</p>}
+                        {errors.customerEmail && <p className="errorMsg">{errors.customerEmail.message}</p>}
                     </div>
                     <div className="input-container">
                         <label>Address</label>
@@ -86,11 +85,11 @@ function OrderSummary() {
                             className="label-name"
                             type="text"
                             placeholder="Enter you address"
-                            {...register("address", {
+                            {...register("deliveryAddress", {
                                 required: "Please enter your address"
                             })}
                         />
-                        {errors.address && <p className="errorMsg">{errors.address.message}</p>}
+                        {errors.deliveryAddress && <p className="errorMsg">{errors.deliveryAddress.message}</p>}
                     </div>
                     <div className="buttons-container">
                     <button className="button-styling" onClick={onCancel}>

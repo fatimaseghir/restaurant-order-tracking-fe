@@ -30,3 +30,14 @@
 .buttons-container {
     display: flex;
 }
+
+table {
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid #362222;
+}
+
+td, th {
+    border: 1px solid #362222;
+}
+

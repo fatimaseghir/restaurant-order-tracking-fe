@@ -1,7 +1,4 @@
 import '../Order/OrderSummary/index.css';
-import {Link} from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
-import {useForm} from 'react-hook-form';
 
 function OrderConfirmed() {
 
