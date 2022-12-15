@@ -10,20 +10,20 @@ function NavBar() {
 
     return (
             <div className="container-nav">
-                <div className="icon">
-                    <AnchorLink href='#description'><img className="logo" src={drink} alt="image" ></img>
+                <div className="icon-nav">
+                    <AnchorLink href='#description'><img className="logo-nav" src={drink} alt="image" ></img>
                     <p className="menu-text">RESTAURANT</p></AnchorLink>
                 </div>
-                <div className="icon">
-                    <AnchorLink href='#menu'><img className="logo" src={menu} alt="image" ></img>
+                <div className="icon-nav">
+                    <AnchorLink href='#menu'><img className="logo-nav" src={menu} alt="image" ></img>
                     <p className="menu-text">MENU</p></AnchorLink>
                 </div>
-                <div className="icon">
-                    <Link to={`/order`}><img className="logo" src={contact} alt="image" ></img>
+                <div className="icon-nav">
+                    <Link to={`/createorder`}><img className="logo-nav" src={contact} alt="image" ></img>
                      <p className="menu-text">ORDER</p></Link>
                 </div>
-                <div className="icon">
-                    <AnchorLink href='#contact'><img className="logo" src={phone} alt="image" ></img>
+                <div className="icon-nav">
+                    <AnchorLink href='#contact'><img className="logo-nav" src={phone} alt="image" ></img>
                     <p className="menu-text">CONTACT</p></AnchorLink>
                 </div>
             </div>

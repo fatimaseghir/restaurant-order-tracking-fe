@@ -3,16 +3,10 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
-.food, .icon {
+#food {
     width: 40%;
     height: auto;
 }
-
-img {
-    width: 40%;
-    height: auto;
-}
-
 
 #card {
     padding: 1rem;
