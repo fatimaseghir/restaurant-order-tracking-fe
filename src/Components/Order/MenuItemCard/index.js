@@ -36,7 +36,7 @@ const MenuItemCard = (props) => {
                     {itemState}
                     <img className='icon' id='plus' src={Plus} onClick={inc} />
                 </div>
-                <button value={menuItem.id} onClick={handleClick}>
+                <button className="button-card" value={menuItem.id} onClick={handleClick}>
                     Add Item
                 </button>
             </div>
