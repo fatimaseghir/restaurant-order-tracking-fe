@@ -21,7 +21,7 @@ const MenuItemCard = (props) => {
     }
 
     const handleClick = (event) => {
-        addItemHandler(event.target.value, itemState);
+        addItemHandler(menuItem.name, itemState, menuItem.price);
     }
 
     return (

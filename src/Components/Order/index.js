@@ -25,11 +25,9 @@ function Order() {
         formState: { errors }
     } = useForm();
 
-    const addItemHandler = (id, quantity) => {
-        console.log(id);
-        console.log(quantity);
+    const addItemHandler = (id, quantity, price) => {
         setOrders(
-            [...orders, {item: id, quantity: quantity}]
+            [...orders, {item: id, quantity: quantity, price: price}]
         )
     }
 
@@ -42,6 +40,17 @@ function Order() {
         reset();
         navigate('/');
     }
+
+    const getTotal = () => {
+        let total = 0;
+        orders.map(order => {
+            total += order.price*order.quantity;
+           console.log(total);
+            }
+        )
+        return total;
+    }
+
 
     return (
         <>
@@ -69,7 +78,7 @@ function Order() {
                 {menu.slice(6,12).map((menuItem, index) => {
                     return (
                         <div className='menuItemCard' key={index}>
-                            <MenuItemCard menuItem={menuItem} />
+                            <MenuItemCard menuItem={menuItem} addItemHandler={addItemHandler} />
                         </div>
                     );
                 })}
@@ -80,7 +89,7 @@ function Order() {
                     {menu.slice(12).map((menuItem, index) => {
                         return (
                             <div className='menuItemCard' key={index}>
-                                <MenuItemCard menuItem={menuItem} />
+                                <MenuItemCard menuItem={menuItem} addItemHandler={addItemHandler}/>
                             </div>
                         );
                     })}
@@ -89,6 +98,7 @@ function Order() {
             </div>
                 <div>
                     <h3 className="order-title" > Order Summary</h3>
+
                     <table>
                         <thead>
                         <tr>
@@ -99,9 +109,21 @@ function Order() {
                         </thead>
                         <tbody>
                         {orders.map(order => {
-                            return <tr key={order.item}><td>{order.item}</td></tr>
+                            return (
+                            <>
+                            <tr key={order.item}>
+                                        <td>{order.item}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>£{order.price*order.quantity}</td>
+                            </tr>
+                            </>
+                            )
                         })}
-
+                        <tr key='total'>
+                        <td>Total</td>
+                        <td></td>
+                        <td>£{getTotal().toFixed(2)}</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
