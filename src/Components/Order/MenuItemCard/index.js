@@ -1,11 +1,11 @@
 import './style.css';
 import Minus from '../../../icons/minus.png';
 import Plus from '../../../icons/plus.png';
-import {useState, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 
 const MenuItemCard = (props) => {
 
-    const {menuItem} = props;
+    const {menuItem, addItemHandler} = props;
     const ref = useRef(null);
 
     const [itemState, setItemState] = useState(0);
@@ -20,6 +20,10 @@ const MenuItemCard = (props) => {
         }
     }
 
+    const handleClick = (event) => {
+        addItemHandler(event.target.value, itemState);
+    }
+
     return (
         <div id='card'>
             <img id='food' src={menuItem.imageURL} alt={menuItem.imageALT} />
@@ -32,6 +36,9 @@ const MenuItemCard = (props) => {
                     {itemState}
                     <img className='icon' id='plus' src={Plus} onClick={inc} />
                 </div>
+                <button value={menuItem.id} onClick={handleClick}>
+                    Add Item
+                </button>
             </div>
         </div>
     )
