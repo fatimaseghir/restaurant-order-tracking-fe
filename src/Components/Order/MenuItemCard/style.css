@@ -6,7 +6,12 @@
 .food, .icon {
     width: 40%;
     height: auto;
+
+img {
+    width: 40%;
+    height: auto;
 }
+
 
 #card {
     padding: 1rem;
