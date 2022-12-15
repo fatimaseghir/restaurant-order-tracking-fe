@@ -31,7 +31,7 @@ function Menu() {
             <h1>Menu</h1>
             <div className="menu-container">
                 <div className="menu-item">
-                   <h3>Starters</h3>
+                   <h3>Burgers</h3>
                     {menu.slice(0,6).map((menuItem) => {
                         return (
                             <p key={menuItem.id}>{menuItem.name} £{menuItem.price}</p>

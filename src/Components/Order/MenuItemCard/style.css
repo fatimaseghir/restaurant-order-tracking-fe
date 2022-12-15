@@ -3,7 +3,7 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
-img {
+.food, .icon {
     width: 40%;
     height: auto;
 }
