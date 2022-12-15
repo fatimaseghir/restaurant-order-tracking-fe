@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+2022 December - Final Project - Restaurant-Order-Tracking-FE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. About
+Content
+Final project relating to iO Full-Stack Web Development Bootcamp.
 
-## Available Scripts
+Objective
+Group project with the objective of building a frontend for a restaurant ordering app that consumes an API developed by a separate team from our cohort:
 
-In the project directory, you can run:
+Agile work environment best practices in a SCRUM methodology
+Git / Github workflow and best practices as a developer team
+Component Driven Development using the React.js Library
+Consuming an API
+Technologies
+React.js - https://reactjs.org/
+Git - https://github.com/com
 
-### `npm start`
+2. Installation
+Follow the next steps to install locally:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Install Git
+Using the following the instructions for the corresponding OS - https://github.com/git-guides/install-git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installing the Database and Running the Back Ennd
+Head over to https://github.com/Carinav/2022-aug-restaurant-api and follow the instructions in the README file in the "Install and Setup" section.
 
-### `npm test`
+Installing the React Application locally
+Clone this repository using the following command in your shell terminal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone git@github.com:fatimaseghir/restaurant-order-tracking-fe.git
 
-### `npm run build`
+3. Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to the folder where you have cloned the API repository and use the command composer start. HTTP requests can be made to http://localhost:8080/. For further information check the documentation in the repository. Leave the tab running while using the Application. ctrl + c to terminate.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigate to the folder where you cloned the Order Application and run the command npm start. A new browser window should open on http://localhost:3000/ running the Application. Leave the terminal running while using the Application. ctrl + c to terminate.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Richard Bingham - @RBingham99
+Fatima Seghir - @fatimaseghir
+Owen May - @O-MAY
