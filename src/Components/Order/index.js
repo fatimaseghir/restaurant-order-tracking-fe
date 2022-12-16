@@ -114,7 +114,7 @@ function Order() {
                             <tr key={order.item}>
                                         <td>{order.item}</td>
                                         <td>{order.quantity}</td>
-                                        <td>£{order.price*order.quantity}</td>
+                                        <td>£{order.price*order.quantity.toFixed(2)}</td>
                             </tr>
                             </>
                             )
